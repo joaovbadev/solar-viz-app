@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SolarViz | Visualização de Dados Espaciais</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">SolarViz</div>
+        <ul class="nav-links">
+            <li><a href="#sobre">A Ciência</a></li>
+            <li><a href="#simulador">Simulador</a></li>
+            <li><a href="#analise">Análise</a></li>
+            <li><a href="#creditos">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <div class="parallax-wrapper">
+
+        <!-- 1. INTRODUÇÃO / VISÃO GERAL -->
+        <header class="hero-section">
+            <div class="bg-stars"></div>
+            <div class="hero-content">
+                <h1>SolarViz</h1>
+                <p>Uma visualização interativa para compreender a dinâmica do Sistema Solar.</p>
+
+                <a href="#simulador" class="hero-cta">
+                    Explorar o Sistema Solar
+                </a>
+            </div>
+        </header>
+
+        <!-- 2. CONTEXTO CIENTÍFICO / PROBLEMA -->
+        <section id="sobre">
+            <h2 class="section-title">A Ciência por Trás da Visualização</h2>
+            <div class="grid-about">
+                <div class="about-text">
+                    <p>
+                        O <strong>SolarViz</strong> é uma ferramenta de visualização de dados que transforma modelos
+                        astronômicos complexos em uma experiência interativa e exploratória. Desenvolvido no contexto da
+                        disciplina de <strong>Visualização de Dados (2025.2)</strong>, o projeto utiliza modelos
+                        Keplerianos para representar órbitas com precisão e valor educativo[cite: 8, 50].
+                    </p>
+                    <p>
+                        Em vez de mapas estáticos, cada planeta e lua tem sua posição calculada dinamicamente ao longo
+                        do tempo, integrando propriedades físicas como massa, gravidade e elementos orbitais. Esses
+                        dados são obtidos diretamente da base científica da <strong>NASA/JPL Horizons</strong>[cite: 19,
+                        21, 46].
+                    </p>
+                </div>
+                <div style="
+                height:300px;
+                border-radius:20px;
+                background:black;
+                overflow:hidden;
+            ">
+
+                    <img src="./kepler.gif" alt="Diagrama de Órbita Kepleriana" style="
+                        width:100%;
+                        height:100%;
+                        object-fit: fill;
+                    " />
+
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- 3. FERRAMENTA / SIMULADOR -->
+        <section id="simulador">
+            <h2 class="section-title">SolarViz</h2>
+            <div class="simulador-container">
+                <div id="observablehq-viewof-solarSystem"></div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: #94a3b8; font-size: 0.9rem;">
+                Explore o sistema em tempo real: navegue pelas órbitas, consulte dados físicos via tooltips e controle a
+                velocidade da simulação temporal[cite: 107, 109].
+            </p>
+        </section>
+
+        <!-- 4. ANÁLISE / INTERPRETAÇÃO -->
+        <section id="analise">
+            <h2 class="section-title">O que Pode Ser Observado?</h2>
+            <div class="cards-info">
+                <div class="card">
+                    <h3>Rede de Rotas</h3>
+                    <p>
+                        O Sistema Solar é apresentado como uma rede de destinos interconectados. As visualizações
+                        evidenciam a complexidade das transferências orbitais e o papel do Δv na viabilidade de missões
+                        espaciais[cite: 56, 75].
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Hierarquia Cósmica</h3>
+                    <p>
+                        A estrutura Sol → Planetas → Luas é explorada por meio de visualizações coordenadas que se
+                        atualizam dinamicamente conforme a interação do usuário, reforçando relações de escala e
+                        dependência gravitacional[cite: 11, 77].
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Métricas Físicas</h3>
+                    <p>
+                        Métricas como massa, gravidade superficial e períodos orbitais podem ser comparadas de forma
+                        integrada por meio de dashboards construídos com D3.js e Vega-Lite[cite: 60, 88].
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. MENSAGEM CONCEITUAL -->
+        <section class="parallax-divider">
+            <div class="parallax-layer"></div>
+            <div class="parallax-content">
+                <h2>Explorar é Interpretar</h2>
+                <p>
+                    No SolarViz, explorar não é apenas observar movimentos, mas interpretar padrões, restrições
+                    energéticas e possibilidades. Cada órbita se torna uma narrativa visual quando analisada sob
+                    diferentes perspectivas.
+                </p>
+            </div>
+        </section>
+
+        <!-- 6. CONTEXTO ACADÊMICO / AUTORIA -->
+        <section id="creditos">
+            <h2 class="section-title">Sobre o Projeto</h2>
+            <div class="grid-about">
+                <div
+                    style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px dashed var(--primary);">
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Contexto Acadêmico</h3>
+                    <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6;">
+                        O <strong>SolarViz</strong> foi desenvolvido como Projeto Final da disciplina de
+                        <strong>Visualização de Dados (2025.2)</strong> na Universidade Federal do Ceará (UFC)[cite: 2,
+                        3, 17]. Sob a orientação da <strong>Profa. Emanuele Santos</strong>, o projeto teve como
+                        objetivo
+                        ir além de gráficos tradicionais, propondo uma ferramenta de exploração multivariada e
+                        interativa[cite: 4, 8, 11].
+                    </p>
+                    <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; margin-top: 1rem;">
+                        A proposta busca responder não apenas “onde os planetas estão”, mas também “quão difícil é
+                        chegar até eles”, considerando aspectos como energia necessária, janelas de lançamento e
+                        trajetórias possíveis[cite: 53, 54].
+                    </p>
+                </div>
+                <div class="about-text">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Equipe</h3>
+                    <ul style="list-style: none; color: #f8fafc;">
+                        <li style="margin-bottom: 1.5rem;">
+                            <strong>Davi Teixeira Silva</strong> <br>
+                            <span style="font-size: 0.85rem; color: #94a3b8;">
+                                Modelos Keplerianos e Lógica Orbital[cite: 5, 9]
+                            </span>
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <strong>João Victor Alves</strong> <br>
+                            <span style="font-size: 0.85rem; color: #94a3b8;">
+                                Arquitetura de Visualização (D3/Three.js) e Design de Interface[cite: 5, 12]
+                            </span>
+                        </li>
+                    </ul>
+                    <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #1f2937;">
+                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--accent);">
+                            Tecnologias Utilizadas[cite: 12, 86, 87, 88]:
+                        </h4>
+                        <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem;">
+                            D3.js • Three.js • Vega-Lite • ObservableHQ • NASA/JPL Data API
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-credits">
+                <p><strong>SolarViz Project</strong> &copy; 2026</p>
+                <p>Desenvolvido por Davi Teixeira Silva e João Victor Alves [cite: 5]</p>
+                <p>Professora: Emanuele Santos | UFC - Visualização de Dados [cite: 2, 4]</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script type="module">
+        import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/aba6f5ac5d71c9f3.js?v=4";
+
+        const container = document.querySelector("#observablehq-viewof-solarSystem");
+
+        new Runtime().module(define, name => {
+            if (name === "viewof solarSystem") {
+                return new Inspector(container);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

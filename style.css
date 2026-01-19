@@ -1,0 +1,276 @@
+   :root {
+       --primary: #6366f1;
+       --accent: #f59e0b;
+       --bg-dark: #05070a;
+       --text-light: #f8fafc;
+   }
+
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       scroll-behavior: smooth;
+   }
+
+   body {
+       background-color: var(--bg-dark);
+       color: var(--text-light);
+       font-family: 'Inter', sans-serif;
+       overflow: hidden;
+       /* Necessário para o wrapper parallax */
+   }
+
+   h1,
+   h2,
+   h3,
+   .nav-logo {
+       font-family: 'Orbitron', sans-serif;
+       text-transform: uppercase;
+       letter-spacing: 2px;
+   }
+
+   /* --- NAV --- */
+   nav {
+       position: fixed;
+       top: 0;
+       width: 100%;
+       padding: 1.5rem 10%;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       background: rgba(5, 7, 10, 0.85);
+       backdrop-filter: blur(10px);
+       z-index: 1000;
+   }
+
+   .nav-links {
+       display: flex;
+       list-style: none;
+       gap: 2rem;
+   }
+
+   .nav-links a {
+       color: var(--text-light);
+       text-decoration: none;
+       font-weight: 600;
+       font-size: 0.9rem;
+   }
+
+   /* --- PARALLAX WRAPPER --- */
+   .parallax-wrapper {
+       height: 100vh;
+       overflow-x: hidden;
+       overflow-y: auto;
+       perspective: 300px;
+   }
+
+   .hero-section {
+       position: relative;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       height: 120vh;
+       transform-style: preserve-3d;
+       z-index: -1;
+   }
+
+   .bg-stars {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 150%;
+       background: url('https://www.transparenttextures.com/patterns/stardust.png');
+       transform: translateZ(-200px) scale(2);
+       z-index: -2;
+   }
+
+   .hero-content {
+       width: 520px;
+       text-align: center;
+       transform: translateZ(50px) scale(0.8);
+       background: rgba(5, 7, 10, 0.6);
+       padding: 3rem;
+       border-radius: 20px;
+       backdrop-filter: blur(5px);
+   }
+
+   .hero-content h1 {
+       font-size: 4rem;
+       margin-bottom: 1rem;
+       background: linear-gradient(to right, #fff, var(--primary));
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+   }
+
+   /* --- SEÇÕES --- */
+   section {
+       padding: 120px 10%;
+       min-height: 80vh;
+       position: relative;
+       background: var(--bg-dark);
+   }
+
+   .section-title {
+       font-size: 2.5rem;
+       margin-bottom: 3rem;
+       text-align: center;
+       color: var(--primary);
+   }
+
+   /* --- SOBRE --- */
+   .grid-about {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 4rem;
+       align-items: center;
+   }
+
+   .about-text p {
+       line-height: 1.8;
+       font-size: 1.1rem;
+       margin-bottom: 1.5rem;
+       color: #cbd5e1;
+   }
+
+   /* --- SIMULADOR --- */
+   #simulador {
+       background: radial-gradient(circle at center, #1e1b4b 0%, var(--bg-dark) 100%);
+   }
+
+   .simulador-container {
+       width: 100%;
+       max-width: 1160px;
+       height: 700px;
+       margin: auto;
+       border: 2px solid var(--primary);
+       border-radius: 16px;
+       background: rgba(0, 0, 0, 0.4);
+       box-shadow: 0 0 50px rgba(99, 102, 241, 0.2);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       overflow: hidden;
+   }
+
+   #observablehq-viewof-solarSystem {
+       width: 100%;
+       height: 100%;
+   }
+
+   /* --- CARDS --- */
+   .cards-info {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+       gap: 2rem;
+   }
+
+   .card {
+       background: #111827;
+       padding: 2.5rem;
+       border-radius: 12px;
+       border: 1px solid #1f2937;
+       transition: 0.3s;
+   }
+
+   .card:hover {
+       border-color: var(--primary);
+       transform: translateY(-5px);
+   }
+
+   .card h3 {
+       color: var(--accent);
+       margin-bottom: 1rem;
+       font-size: 1.2rem;
+   }
+
+   footer {
+       text-align: center;
+       padding: 4rem;
+       border-top: 1px solid #1f2937;
+       background: #020408;
+   }
+
+   .footer-credits {
+       font-size: 0.8rem;
+       color: #64748b;
+       line-height: 2;
+   }
+
+   /* --- PARALLAX DIVIDER --- */
+   .parallax-divider {
+       position: relative;
+       height: 70vh;
+       overflow: hidden;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+
+   .parallax-divider::after {
+       content: "";
+       position: absolute;
+       inset: 0;
+       background: radial-gradient(circle at center,
+               rgba(99, 102, 241, 0.15),
+               rgba(5, 7, 10, 0.95));
+       z-index: 1;
+   }
+
+   .parallax-layer {
+       position: absolute;
+       inset: 0;
+       background-image:
+           url("https://www.transparenttextures.com/patterns/stardust.png");
+       background-size: 400px 400px;
+       transform: translateZ(-1px) scale(2);
+       opacity: 0.6;
+       z-index: 0;
+   }
+
+   .parallax-content {
+       position: relative;
+       z-index: 2;
+       text-align: center;
+       max-width: 800px;
+       padding: 2rem;
+       backdrop-filter: blur(4px);
+   }
+
+   .parallax-content h2 {
+       font-size: 2.2rem;
+       margin-bottom: 1rem;
+       color: var(--primary);
+   }
+
+   .parallax-content p {
+       font-size: 1.1rem;
+       line-height: 1.7;
+       color: #cbd5e1;
+   }
+
+   /* --- HERO CTA BUTTON --- */
+   .hero-cta {
+       display: inline-block;
+       margin-top: 2rem;
+       padding: 14px 32px;
+       font-family: 'Orbitron', sans-serif;
+       font-size: 0.85rem;
+       letter-spacing: 2px;
+       text-transform: uppercase;
+       text-decoration: none;
+       color: #fff;
+       background: linear-gradient(135deg, var(--primary), #4f46e5);
+       border-radius: 999px;
+       box-shadow:
+           0 0 20px rgba(99, 102, 241, 0.4),
+           inset 0 0 10px rgba(255, 255, 255, 0.1);
+       transition: all 0.3s ease;
+   }
+
+   .hero-cta:hover {
+       transform: translateY(-2px);
+       box-shadow:
+           0 0 35px rgba(99, 102, 241, 0.7),
+           inset 0 0 15px rgba(255, 255, 255, 0.15);
+   }
